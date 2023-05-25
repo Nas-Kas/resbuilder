@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume Builder</title>
+
+  <link rel="stylesheet" href="index.css" />
+
+  <script src="drag.js" defer></script>
+  <script src="todo.js" defer></script>
+  <script src="../node_modules/axios/dist/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="../server/index.js"></script>
+</head>
+<body>
+  <div class="board">
+
+  <form id="todo-form">
+    <input type="text" placeholder="Company Name" id="todo-input" />
+    <input type="text" placeholder="Location" id="todo-input" />
+    <input type="text" placeholder="Start Date" id="todo-input" />
+    <input type="text" placeholder="End Date" id="todo-input" />
+    <input type="text" placeholder="Summary 1" id="todo-input" />
+    <input type="text" placeholder="Summary 2" id="todo-input" />
+    <input type="text" placeholder="Summary 3" id="todo-input" />
+    <button type="submit" id="addbtn">Add +</button>
+    <button type="button" id="buildbtn"> Build Resume </button>
+    <button type="button" id="viewbtn"> View Resume </button>
+    <button type="button" id="savebtn"> Save Resume </button>
+  </form>
+
+  <div class="lanes">
+    <div class="swim-lane" id="todo-lane">
+      <h3 class="heading">Resume Items</h3>
+      <div class="task" draggable="true">
+        <h4>Company Name: Google <span id="companyName"></span></h4>
+        <p>Location: San Francisco <span id="location"></span></p>
+        <p>Start Date: March 1st <span id="startDate"></span></p>
+        <p>End Date: March 2nd<span id="endDate"></span></p>
+        <p>Summary 1:  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown  <span id="summary1"></span></p>
+        <p>Summary 2:  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown  <span id="summary2"></span></p>
+        <p>Summary 3:  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown  <span id="summary3"></span></p>
+      </div>
+
+      <div class="task" draggable="true">
+        <h4>Company Name: Amazon <span id="companyName"></span></h4>
+        <p>Location: Seattle <span id="location"></span></p>
+        <p>Start Date: March 1st <span id="startDate"></span></p>
+        <p>End Date: March 2nd<span id="endDate"></span></p>
+        <p>Summary 1: Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown  <span id="summary1"></span></p>
+        <p>Summary 2: Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown  <span id="summary2"></span></p>
+        <p>Summary 3: Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown  <span id="summary3"></span></p>
+      </div>
+
+      <div class="task" draggable="true">
+        <h4>Company Name: MIT <span id="companyName"></span></h4>
+        <p>Location: Boston <span id="location"></span></p>
+        <p>Start Date: 2015 <span id="startDate"></span></p>
+        <p>End Date: 2019 <span id="endDate"></span></p>
+        <p>Summary 1:  Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown  <span id="summary1"></span></p>
+      </div>
+
+    </div>
+
+  <div class="swim-lane" id="todo-lane">
+      <h3 class="heading">Education Experience</h3>
+      
+    </div>
+
+    <div class="swim-lane" id="todo-lane">
+      <h3 class="heading">Work Experience</h3>
+      
+    </div>
+
+    <div class="swim-lane" id="todo-lane">
+      <h3 class="heading">Personal Projects</h3>
+     
+    </div>
+
+    <div class="resume-container"></div>
+  </div>
+  </div>
+</body>
+
+
+</html>
