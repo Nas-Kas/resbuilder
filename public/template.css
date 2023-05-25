@@ -6,6 +6,12 @@
   html {
     height: 100%;  
   }
+  .right > .addr,
+  .right > .name {
+    float: right;
+    clear: both;
+  }
+  
   
   body {
     min-height: 100%;  
